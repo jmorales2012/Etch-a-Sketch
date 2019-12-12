@@ -1,6 +1,6 @@
 const container = document.querySelector('.container');
-container.style.height = '500px';
-container.style.width = '500px';
+container.style.height = '400px';
+container.style.width = '600px';
 
 // determine if mouse is in square at any given time
 let allowDraw = true;
