@@ -1,6 +1,6 @@
 const container = document.querySelector('.container');
-container.style.height = '400px';
-container.style.width = '400px';
+container.style.height = '500px';
+container.style.width = '500px';
 
 // determine if mouse is in square at any given time
 let allowDraw = true;
@@ -23,7 +23,7 @@ function createBoard(size = 5) {
     div.classList.add('square');
     div.style.height = parseInt(container.style.height) / size + 'px';
     div.style.width = parseInt(container.style.width) / size + 'px';
-    div.style.opacity = 0.1;
+    div.style.opacity = 0.2;
     container.appendChild(div);
   }
 }
@@ -36,7 +36,7 @@ function changeEffect(e) {
   if (container.classList.contains('fade')) {
     fadeButton.textContent = 'Fade Effect On';
   } else {
-    fadeButton.textContnt = 'Fade Effect Off';
+    fadeButton.textContent = 'Fade Effect Off';
   }
 }
 

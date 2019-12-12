@@ -4,16 +4,45 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
+/*          HEADER STYLING
+ */
+
+ .header {
+   color: #3c9d9b;
+   margin-top: 15px;
+   text-align: center;
+ }
+
+
+
+
+/*          MENU STYLING
+ */
+
+.menu {
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
+  width: 400px;
+  margin: 15px auto;
   justify-content: center;
 }
 
-.square {
-  margin: 0px;
-  border: 1px solid #fff;
-  background-color: pink;
+.menu button {
+  width: 150px;
+  height: 40px;
+  border: none;
+  margin: 5px;
+}
+
+.reset {
+  background-color: #fff3af;
+}
+
+input{ 
+  margin: 10px 0 0 0;
+  outline: none;
+  height: 30px;
+  width: 200px;
 }
 
 .button-on {
@@ -26,6 +55,19 @@
   outline: none;
 }
 
-input{ 
-  outline: none;
+
+/*          CONTAINER & SQUARE STYLING
+ */
+.container {
+  margin: 20px auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  justify-self: center;
+}
+
+.square {
+  margin: 0px;
+  border: 1px solid #fff;
+  background-color: pink;
 }
