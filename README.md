@@ -4,6 +4,6 @@ Etch-A-Sketch project from [The Odin Project](https://www.theodinproject.com/cou
 
 
 Future Ideas for Project
-* Allow user to choose primary color to fill squares with
+[done] Allow user to choose primary color to fill squares with
 * Allow user to save their board as image
 * Create database and let users upload/view/share/like their favorites
