@@ -5,6 +5,7 @@ Etch-A-Sketch project from [The Odin Project](https://www.theodinproject.com/cou
 
 Future Ideas for Project
 * [DONE] Allow user to choose primary color to fill squares with
+* Add support for hex colors in color input
 * Allow  user to reset specific square (in case of errors)
 * Let user pick default background color
 * Let user set dimensions
