@@ -14,4 +14,18 @@
   margin: 0px;
   border: 1px solid #fff;
   background-color: pink;
-} 
+}
+
+.button-on {
+  background-color: #c3f0ca;
+  outline: none;
+}
+
+.button-off {
+  background-color: #f65c78;
+  outline: none;
+}
+
+input{ 
+  outline: none;
+}
