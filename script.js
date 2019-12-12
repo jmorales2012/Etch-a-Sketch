@@ -1,13 +1,18 @@
 const container = document.querySelector('.container');
 container.style.height = '400px';
 container.style.width = '400px';
-container.addEventListener('mouseover', draw);
-// let drawColor = '#444';
+
+// determine if mouse is in square at any given time
+let allowDraw = true;
+let mouseOverTarget = '';
+container.addEventListener('mouseover', isSquare);
+container.addEventListener('mouseleave', () => mouseOverTarget = '');
+window.addEventListener('keydown', pauseDraw);
+window.addEventListener('keyup', continueDraw);
 
 const resetButton = document.querySelector('.reset');
-resetButton.addEventListener('click', resetBoard);
-
 const fadeButton = document.querySelector('.fade');
+resetButton.addEventListener('click', resetBoard);
 fadeButton.addEventListener('click', changeEffect);
 
 const colorInput = document.querySelector('.draw-color');
@@ -43,24 +48,47 @@ function checkColor(color) {
   return test.color === color.toLowerCase();
 }
 
-function draw(e) {
+function isSquare(e) {
   if (e.target.classList.contains('square')) {
-    // see if user input is valid color
-    if (checkColor(colorInput.value)) {
-      e.target.style.backgroundColor = colorInput.value;
-    } else {
-      e.target.style.backgroundColor = '#444';
-    }
-
-    if (container.classList.contains('fade')) {
-      if (e.target.style.opacity < 1) {
-        e.target.style.opacity = Number(e.target.style.opacity) + 0.1;
-      } 
-    } else {
-      e.target.style.opacity = 1.0;
+    mouseOverTarget = e;
+    if (allowDraw) { 
+      colorSquare(e);
     }
   }
-} 
+}
+
+function colorSquare(e) {
+  if (checkColor(colorInput.value)) {
+    e.target.style.backgroundColor = colorInput.value;
+  } else {
+    e.target.style.backgroundColor = '#444';
+  }
+
+  if (container.classList.contains('fade')) {
+    if (e.target.style.opacity < 1) {
+      e.target.style.opacity = Number(e.target.style.opacity) + 0.1;
+    } 
+  } else {
+    e.target.style.opacity = 1.0;
+  }
+}
+
+// allows user to pause drawing to move mouse around
+function pauseDraw(e) {
+  if (e.keyCode === 16) {
+    allowDraw = false;
+  }
+}
+
+// checks if mouse is over a square when shift is released and fills it in if so
+function continueDraw(e) { 
+  if  (e.keyCode === 16) {
+    allowDraw = true;
+    if (mouseOverTarget) {
+      colorSquare(mouseOverTarget);
+    }
+  }
+}
 
 function resetBoard() {
   let size = prompt('New Board Size: ');
